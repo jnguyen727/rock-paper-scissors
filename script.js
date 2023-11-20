@@ -44,8 +44,8 @@ function playRound(playerSelection, computerSelection) {
     }
 
     else if (playerSelection === "scissors" && computerSelection === "Paper!") {
-        playerScore += 1;
         roundCount += 1;
+        playerScore += 1;
         return console.log("You Win!");
     }
 
@@ -95,7 +95,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 
 
-  let playerSelection = prompt();
+  let playerSelection = prompt().toLowerCase();
     console.log(playerSelection);
     let computerSelection = getComputerChoice();
     console.log(computerSelection);
