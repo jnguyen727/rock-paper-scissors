@@ -57,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-    if (playerSelection === "rock" && computerSelection === "Paper!") {
+    if (playerSelection === "rock" && computerSelection === "Paper!" && roundCount != 5) {
         computerScore += 1;
         roundCount += 1;
         resultsText.textContent = ("You Lose!");
@@ -67,7 +67,7 @@ function playRound(playerSelection, computerSelection) {
 
     }
 
-    else if (playerSelection === "rock" && computerSelection === "Scissors!") {
+    else if (playerSelection === "rock" && computerSelection === "Scissors!" && roundCount != 5) {
         playerScore += 1;
         roundCount += 1;
         resultsText.textContent = ("You Win!");
@@ -76,7 +76,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "rock" && computerSelection === "Rock!") {
+    else if (playerSelection === "rock" && computerSelection === "Rock!" && roundCount != 5) {
         roundCount += 1;
         resultsText.textContent = ("Draw!");
         playerScoreText.textContent = playerScore;
@@ -84,7 +84,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "scissors" && computerSelection === "Paper!") {
+    else if (playerSelection === "scissors" && computerSelection === "Paper!" && roundCount != 5) {
         roundCount += 1;
         playerScore += 1;
         resultsText.textContent = ("You Win!");
@@ -93,7 +93,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "scissors" && computerSelection === "Scissors!") {
+    else if (playerSelection === "scissors" && computerSelection === "Scissors!" && roundCount != 5) {
         roundCount += 1;
         resultsText.textContent = ("Draw!");
         playerScoreText.textContent = playerScore;
@@ -101,7 +101,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "scissors" && computerSelection === "Rock!") {
+    else if (playerSelection === "scissors" && computerSelection === "Rock!" && roundCount != 5) {
         roundCount += 1;
         computerScore += 1;
         resultsText.textContent = ("You Lose!");
@@ -110,7 +110,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "paper" && computerSelection === "Paper!") {
+    else if (playerSelection === "paper" && computerSelection === "Paper!" && roundCount != 5) {
         roundCount += 1;
         resultsText.textContent = ("Draw!");
         playerScoreText.textContent = playerScore;
@@ -118,7 +118,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "paper" && computerSelection === "Scissors!") {
+    else if (playerSelection === "paper" && computerSelection === "Scissors!" && roundCount != 5) {
         roundCount += 1;
         computerScore += 1;
         resultsText.textContent = ("You Lose!");
@@ -127,7 +127,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else if (playerSelection === "paper" && computerSelection === "Rock!") {
+    else if (playerSelection === "paper" && computerSelection === "Rock!" && roundCount != 5) {
         roundCount += 1;
         playerScore += 1;
         resultsText.textContent = ("You Win!");
@@ -164,18 +164,16 @@ function game() {
  
  
 if (playerScore > computerScore && roundCount === 5) {
-    matchResultsText.textContent = ("You win the game!");
+    resultsText.textContent = ("You used Hollow Purple. You Win!");
 }
 
 if (playerScore < computerScore && roundCount === 5) {
-    matchResultsText.textContent = ("You lose the game!");
+    resultsText.textContent = ("You lose the game!");
 }
 
 if (playerScore === computerScore && roundCount === 5) {
-    matchResultsText.textContent = ("The game is a draw!");
+    resultsText.textContent = ("The game is a draw!");
 }
-
-
 
 
 }
