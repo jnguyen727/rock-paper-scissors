@@ -7,8 +7,9 @@ const rockBtn = document.getElementById('rockbtn');
 const paperBtn = document.getElementById('paperbtn');
 const scissorBtn = document.getElementById('scissorbtn');
 const resultsText = document.getElementById('results');
-
-
+const playerScoreText = document.getElementById('playerscore');
+const computerScoreText = document.getElementById('computerscore');
+const matchResultsText = document.getElementById('matchResult')
 
 
 
@@ -59,54 +60,80 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "Paper!") {
         computerScore += 1;
         roundCount += 1;
-        results.textContent = ("You Lose!");
-    
+        resultsText.textContent = ("You Lose!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
 
     }
 
     else if (playerSelection === "rock" && computerSelection === "Scissors!") {
         playerScore += 1;
         roundCount += 1;
-        results.textContent = ("You Win!");
+        resultsText.textContent = ("You Win!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "rock" && computerSelection === "Rock!") {
         roundCount += 1;
-        results.textContent = ("Draw!");
+        resultsText.textContent = ("Draw!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "scissors" && computerSelection === "Paper!") {
         roundCount += 1;
         playerScore += 1;
-        results.textContent = ("You Win!");
+        resultsText.textContent = ("You Win!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "scissors" && computerSelection === "Scissors!") {
         roundCount += 1;
-        results.textContent = ("Draw!");
+        resultsText.textContent = ("Draw!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "scissors" && computerSelection === "Rock!") {
         roundCount += 1;
         computerScore += 1;
-        results.textContent = ("You Lose!");
+        resultsText.textContent = ("You Lose!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "paper" && computerSelection === "Paper!") {
         roundCount += 1;
-        results.textContent = ("Draw!");
+        resultsText.textContent = ("Draw!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "paper" && computerSelection === "Scissors!") {
         roundCount += 1;
         computerScore += 1;
-        results.textContent = ("You Lose!");
+        resultsText.textContent = ("You Lose!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else if (playerSelection === "paper" && computerSelection === "Rock!") {
         roundCount += 1;
         playerScore += 1;
-        results.textContent = ("You Win!");
+        resultsText.textContent = ("You Win!");
+        playerScoreText.textContent = playerScore;
+        computerScoreText.textContent = computerScore;
+        
     }
 
     else {
@@ -137,15 +164,15 @@ function game() {
  
  
 if (playerScore > computerScore && roundCount === 5) {
-    console.log("You win the game!");
+    matchResultsText.textContent = ("You win the game!");
 }
 
 if (playerScore < computerScore && roundCount === 5) {
-    console.log("You lose the game!");
+    matchResultsText.textContent = ("You lose the game!");
 }
 
 if (playerScore === computerScore && roundCount === 5) {
-    console.log("The game is a draw!");
+    matchResultsText.textContent = ("The game is a draw!");
 }
 
 
